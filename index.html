@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Login Form</title>  
+    <link rel="stylesheet" href="style.css">  
+</head>  
+<body>  
+    <div class="container">  
+        <h2>Login</h2>  
+        <form id="loginForm">  
+            <label for="username">Username</label>  
+            <input type="text" id="username" name="username" required>  
+
+            <label for="password">Password</label>  
+            <input type="password" id="password" name="password" required>  
+
+            <button type="submit">Login</button>  
+            <p id="errorMessage" style="color: red;"></p>  
+</form>  
+</div>  
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Predefined credentials (for testing)
+            const validUsername = "admin";
+            const validPassword = "TCIS@TCIS";
+
+            // Get input values
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === validUsername && password === validPassword) {
+                alert("Login successful!");
+                window.location.href = "file:///C:/Users/Win%2011/Desktop/HOME%20PAGE.HTML"; // Redirect to a new page
+            } else {
+                document.getElementById("errorMessage").textContent = "Invalid username or password.";
+            }
+        });
+    </script>  
+</body>  
+</html>
